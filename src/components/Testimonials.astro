@@ -1,0 +1,127 @@
+---
+const testimonials = [
+  {
+    quote: "I finally stopped yo-yo dieting and now I love training. Zoe helped me build a sustainable routine that fits my busy life as a mom of two.",
+    name: "Sarah J.",
+    image: "/images/testimonial-1.jpg",
+    achievement: "Lost 15kg and maintained for over a year"
+  },
+  {
+    quote: "Zoe's program helped me lift more and stress less. For the first time, I feel strong and confident in my body, and I'm hitting PRs I never thought possible.",
+    name: "Emma T.",
+    image: "/images/testimonial-2.jpg",
+    achievement: "Doubled her strength in 6 months"
+  },
+  {
+    quote: "The mindset work was the game-changer for me. I've tried many programs before, but Zoe's approach to habits and consistency finally made fitness stick.",
+    name: "Michelle K.",
+    image: "/images/testimonial-3.jpg",
+    achievement: "Transformed her relationship with food and exercise"
+  }
+];
+---
+
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="section-title text-center">Client Transformations</h2>
+    <p class="testimonials-intro text-center">Real women, real results, real life changes</p>
+    
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <div class="testimonial-image">
+            <img src={testimonial.image} alt={testimonial.name} />
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-quote">"{testimonial.quote}"</div>
+            <div class="testimonial-author">
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.achievement}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="testimonials-cta text-center">
+      <p>Ready to write your own success story?</p>
+      <a href="#reset" class="btn btn-primary">Start Your Transformation</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--color-white);
+  }
+  
+  .testimonials-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background-color: var(--color-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonial-image {
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .testimonial-card:hover .testimonial-image img {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-content {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-quote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial-author span {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+  
+  .testimonials-cta {
+    margin-top: 4rem;
+  }
+  
+  .testimonials-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 992px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+  }
+</style>

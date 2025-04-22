@@ -1,0 +1,161 @@
+---
+---
+
+<section id="reset" class="lead-magnet">
+  <div class="container">
+    <div class="lead-magnet-grid">
+      <div class="lead-magnet-content">
+        <h2 class="section-title">Strong Start — 7-Day Reset</h2>
+        <p class="lead-magnet-intro">Kickstart your strength journey with this free 7-day program</p>
+        <p>Ready to break free from diet culture and build sustainable habits? This free reset guide includes:</p>
+        <ul class="lead-magnet-features">
+          <li>
+            <span class="feature-icon">📋</span>
+            <span>7 days of structured workouts (home & gym options)</span>
+          </li>
+          <li>
+            <span class="feature-icon">🥗</span>
+            <span>Simple meal planning templates & recipes</span>
+          </li>
+          <li>
+            <span class="feature-icon">🧠</span>
+            <span>Daily mindset journal prompts</span>
+          </li>
+          <li>
+            <span class="feature-icon">📱</span>
+            <span>Habit tracker to build consistency</span>
+          </li>
+        </ul>
+        
+        <form class="lead-magnet-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <button type="submit" class="btn btn-accent">Get the Free Reset Now</button>
+        </form>
+        <p class="form-disclaimer">We respect your privacy and will never share your information.</p>
+      </div>
+      <div class="lead-magnet-image">
+        <img src="/images/reset-guide-cover.jpg" alt="7-Day Reset Guide" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lead-magnet {
+    background-color: var(--color-secondary-light);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .lead-magnet-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .lead-magnet-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .lead-magnet-features {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+  }
+  
+  .lead-magnet-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .lead-magnet-form {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+  
+  .form-disclaimer {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #666;
+  }
+  
+  .lead-magnet-image img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: rotate(2deg);
+  }
+  
+  @media (max-width: 992px) {
+    .lead-magnet-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .lead-magnet-image {
+      max-width: 400px;
+      margin: 0 auto;
+      order: -1;
+    }
+  }
+</style>
+
+<script>
+  // Simple form handling
+  const form = document.querySelector('.lead-magnet-form');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    
+    if (nameInput && emailInput) {
+      // In a real implementation, you would send this data to your server or email service
+      console.log('Form submitted:', {
+        name: nameInput.value,
+        email: emailInput.value
+      });
+      
+      // Show success message
+      form.innerHTML = `
+        <div class="form-success">
+          <h3>Thank you, ${nameInput.value}!</h3>
+          <p>Your 7-Day Reset Guide is on its way to your inbox. Check your email in the next few minutes.</p>
+        </div>
+      `;
+    }
+  });
+</script>

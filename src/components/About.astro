@@ -1,0 +1,105 @@
+---
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/zoe-portrait.jpg" alt="Zoe Matthews, Personal Trainer" />
+      </div>
+      <div class="about-content">
+        <h2 class="section-title">About Zoe</h2>
+        <p class="about-intro">Hi, I'm Zoe Matthews, a certified personal trainer based in Byron Bay, Australia.</p>
+        <p>My journey began after years of yo-yo dieting and exercise burnout. I was constantly chasing quick results, only to find myself exhausted, frustrated, and back at square one.</p>
+        <p>That's when I discovered the power of sustainable strength training and mindset work. Not only did I transform my body, but I found confidence, balance, and freedom from the all-or-nothing cycle.</p>
+        <p>Now, I help women just like you build strength that goes beyond the physical. My approach combines effective training with habit coaching and mindset support—because true transformation happens when we address the whole person.</p>
+        <h3>Why I Coach Women Like You</h3>
+        <p>I believe every woman deserves to feel strong in her body and confident in her choices. My clients aren't looking for another quick fix—they're ready for lasting change and a sustainable approach to fitness and wellbeing.</p>
+        <div class="credentials">
+          <div class="credential">
+            <span class="credential-icon">✓</span>
+            <span>Certified Personal Trainer (CPT)</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✓</span>
+            <span>Nutrition Coach Certification</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✓</span>
+            <span>Habit Coaching Specialist</span>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">✓</span>
+            <span>Women's Fitness Specialist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background-color: var(--color-white);
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .about-image img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+  
+  .credentials {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .credential-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+  }
+  
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .credentials {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+const services = [
+  {
+    icon: "💻",
+    title: "1:1 Online Coaching",
+    description: "Personalized training, nutrition guidance, and accountability tailored to your unique goals and lifestyle.",
+    includes: [
+      "Custom workout program",
+      "Weekly check-ins",
+      "Nutrition guidance",
+      "Form feedback",
+      "24/7 messaging support",
+      "Progress tracking"
+    ]
+  },
+  {
+    icon: "💪",
+    title: "Group Coaching Membership",
+    description: "Join our supportive community of women committed to strength, with structured programs and regular group calls.",
+    includes: [
+      "Monthly training programs",
+      "Group coaching calls",
+      "Private community access",
+      "Recipe library",
+      "Weekly challenges",
+      "Live Q&A sessions"
+    ]
+  },
+  {
+    icon: "📝",
+    title: "Custom Program Design",
+    description: "A tailored workout plan designed for your goals, equipment, and schedule without the full coaching experience.",
+    includes: [
+      "Initial assessment",
+      "8-week program",
+      "Video exercise library",
+      "Program updates",
+      "One form check session",
+      "Progress tracking tools"
+    ]
+  },
+  {
+    icon: "🧠",
+    title: "Mindset + Lifestyle Support",
+    description: "Break through mental barriers and build sustainable habits that support your fitness journey and overall wellbeing.",
+    includes: [
+      "Habit coaching",
+      "Mindset journaling prompts",
+      "Stress management tools",
+      "Sleep optimization",
+      "Accountability system",
+      "Behavior change strategies"
+    ]
+  },
+  {
+    icon: "🥗",
+    title: "Nutrition Habits + Recipe Packs",
+    description: "Learn to fuel your body with confidence through habit-based nutrition coaching and delicious, simple recipes.",
+    includes: [
+      "Nutrition habit building",
+      "Meal planning templates",
+      "80+ healthy recipes",
+      "Grocery shopping guides",
+      "Portion guidance",
+      "Eating out strategies"
+    ]
+  }
+];
+---
+
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title text-center">Coaching Options</h2>
+    <p class="services-intro text-center">Choose the support that fits your lifestyle and goals</p>
+    
+    <div class="services-grid">
+      {services.map(service => (
+        <div class="service-card">
+          <div class="service-icon">{service.icon}</div>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <div class="service-includes">
+            <h4>What's Included:</h4>
+            <ul>
+              {service.includes.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="services-cta text-center">
+      <p>Ready to find the right coaching option for you?</p>
+      <a href="#contact" class="btn btn-primary">Book a Free Discovery Call</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background-color: var(--color-secondary-light);
+  }
+  
+  .services-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .service-includes {
+    margin-top: 1.5rem;
+  }
+  
+  .service-includes h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+  
+  .service-includes ul {
+    list-style: none;
+  }
+  
+  .service-includes li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-includes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+  
+  .services-cta {
+    margin-top: 4rem;
+  }
+  
+  .services-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

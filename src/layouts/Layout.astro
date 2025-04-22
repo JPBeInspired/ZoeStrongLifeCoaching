@@ -1,0 +1,174 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Strong Life Coaching by Zoe Matthews - Online personal training for women who want to get stronger, more confident, and build a sustainable lifestyle." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		/* Color palette */
+		--color-primary: #8D7B68;
+		--color-primary-light: #A4907C;
+		--color-secondary: #C8B6A6;
+		--color-secondary-light: #F1DEC9;
+		--color-accent: #D7A19E;
+		--color-dark: #333333;
+		--color-light: #F8F5F2;
+		--color-white: #FFFFFF;
+		
+		/* Typography */
+		--font-heading: 'Playfair Display', serif;
+		--font-body: 'Inter', sans-serif;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	html {
+		font-family: var(--font-body);
+		background: var(--color-light);
+		color: var(--color-dark);
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		line-height: 1.6;
+	}
+	
+	h1, h2, h3, h4, h5 {
+		font-family: var(--font-heading);
+		font-weight: 600;
+		line-height: 1.2;
+	}
+	
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		margin-bottom: 1rem;
+	}
+	
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: 1.5rem;
+	}
+	
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		margin-bottom: 1rem;
+	}
+	
+	p {
+		margin-bottom: 1rem;
+	}
+	
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.container {
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+	
+	section {
+		padding: 5rem 0;
+	}
+	
+	.btn {
+		display: inline-block;
+		padding: 0.8rem 1.8rem;
+		border-radius: 50px;
+		font-weight: 500;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-size: 1rem;
+		text-align: center;
+	}
+	
+	.btn-primary {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+		border: 2px solid var(--color-primary);
+	}
+	
+	.btn-primary:hover {
+		background-color: var(--color-primary-light);
+		border-color: var(--color-primary-light);
+	}
+	
+	.btn-secondary {
+		background-color: transparent;
+		color: var(--color-primary);
+		border: 2px solid var(--color-primary);
+	}
+	
+	.btn-secondary:hover {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+	}
+	
+	.btn-accent {
+		background-color: var(--color-accent);
+		color: var(--color-white);
+		border: 2px solid var(--color-accent);
+	}
+	
+	.btn-accent:hover {
+		opacity: 0.9;
+	}
+	
+	.text-center {
+		text-align: center;
+	}
+	
+	.section-title {
+		position: relative;
+		margin-bottom: 3rem;
+	}
+	
+	.section-title::after {
+		content: "";
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 60px;
+		height: 3px;
+		background-color: var(--color-accent);
+	}
+	
+	.section-title.text-center::after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	@media (max-width: 768px) {
+		section {
+			padding: 3rem 0;
+		}
+	}
+</style>

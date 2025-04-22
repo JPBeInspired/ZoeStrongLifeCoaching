@@ -1,0 +1,75 @@
+---
+---
+
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Get Strong, Stay Confident, Live Free</h1>
+      <p class="hero-subtitle">Online coaching for women ready to lift heavy, ditch the guilt, and build a lifestyle they love.</p>
+      <div class="hero-cta">
+        <a href="#reset" class="btn btn-primary">Start with the Free 7-Day Reset</a>
+        <a href="#contact" class="btn btn-secondary">Book a Free Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background-image: url('/images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    margin-top: 0;
+    padding: 0;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      text-align: center;
+      padding-top: 80px;
+    }
+    
+    .hero-content {
+      margin: 0 auto;
+    }
+    
+    .hero-cta {
+      justify-content: center;
+    }
+  }
+</style>

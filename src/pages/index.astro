@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
+import Booking from '../components/Booking.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Strong Life Coaching | Personal Training by Zoe Matthews">
+  <Header />
+  <Hero />
+  <About />
+  <Services />
+  <Testimonials />
+  <LeadMagnet />
+  <Booking />
+  <FAQ />
+  <Footer />
+</Layout>
+
+<script>
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Adjust for header height
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+  
+  // Header scroll effect
+  const header = document.querySelector('.header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  });
+</script>
+
+<style>
+  /* Add any page-specific styles here */
+  .header.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+  }
+</style>

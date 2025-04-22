@@ -1,0 +1,176 @@
+---
+---
+
+<section id="contact" class="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-content">
+        <h2 class="section-title">Book a Free Discovery Call</h2>
+        <p class="booking-intro">Let's chat about your goals and see if we're a good fit to work together</p>
+        <p>During this 30-minute call, we'll discuss:</p>
+        <ul class="booking-list">
+          <li>Your current fitness level and experience</li>
+          <li>Your goals and what you want to achieve</li>
+          <li>Any challenges you're facing with your fitness</li>
+          <li>How my coaching approach can help you</li>
+          <li>Which program might be the best fit for you</li>
+        </ul>
+        <p class="booking-note"><strong>Note:</strong> I only take on a limited number of 1:1 clients each month to ensure I can provide the best support possible.</p>
+      </div>
+      <div class="booking-calendar">
+        <div class="calendar-placeholder">
+          <h3>Schedule Your Call</h3>
+          <p>Select a date and time that works for you:</p>
+          <!-- In a real implementation, this would be replaced with an embedded Calendly widget -->
+          <div class="calendar-dates">
+            <div class="date-option">
+              <div class="date">Mon, Jun 10</div>
+              <div class="times">
+                <button class="time-btn">10:00 AM</button>
+                <button class="time-btn">2:00 PM</button>
+                <button class="time-btn">5:30 PM</button>
+              </div>
+            </div>
+            <div class="date-option">
+              <div class="date">Tue, Jun 11</div>
+              <div class="times">
+                <button class="time-btn">9:30 AM</button>
+                <button class="time-btn">1:00 PM</button>
+                <button class="time-btn">4:00 PM</button>
+              </div>
+            </div>
+            <div class="date-option">
+              <div class="date">Wed, Jun 12</div>
+              <div class="times">
+                <button class="time-btn">11:00 AM</button>
+                <button class="time-btn">3:30 PM</button>
+                <button class="time-btn">6:00 PM</button>
+              </div>
+            </div>
+          </div>
+          <p class="calendar-note">In a real implementation, this would be connected to Zoe's actual calendar via Calendly.</p>
+          <a href="#" class="btn btn-primary btn-full">Book Your Free Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .booking {
+    background-color: var(--color-white);
+  }
+  
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .booking-intro {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .booking-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .booking-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .booking-note {
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: var(--color-secondary-light);
+    border-radius: 5px;
+  }
+  
+  .booking-calendar {
+    background-color: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .calendar-placeholder {
+    padding: 2rem;
+  }
+  
+  .calendar-placeholder h3 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .calendar-dates {
+    margin: 1.5rem 0;
+  }
+  
+  .date-option {
+    margin-bottom: 1.5rem;
+  }
+  
+  .date {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .times {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .time-btn {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .time-btn:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    border-color: var(--color-primary-light);
+  }
+  
+  .calendar-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #666;
+  }
+  
+  .btn-full {
+    width: 100%;
+  }
+  
+  @media (max-width: 992px) {
+    .booking-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Simple time selection functionality
+  const timeButtons = document.querySelectorAll('.time-btn');
+  
+  timeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      timeButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      button.classList.add('active');
+    });
+  });
+</script>
